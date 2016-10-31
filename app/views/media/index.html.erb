@@ -1,0 +1,14 @@
+media index page
+
+
+<h1>media list</h1>
+
+<ul>
+   <% @media.each do |medium| %>
+    <li>
+        <%= medium.song %>
+        <%= medium.artist %>
+        <%= medium.album %>
+    </li>
+    <% end %>
+</ul>
