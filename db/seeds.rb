@@ -6,13 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-users = User.create([
-    {first_name: 'Blair', last_name: "Dowis", email: "blairdow@gmail.com"},
-    {first_name: 'Nevil', last_name: "Jackson", email: "nevil.jackson@gmail.com"}
-    ])
+User.delete_all
+Medium.delete_all
 
-user1 = User.create({first_name: 'Blair', last_name: "Dowis", email: "blairdow@gmail.com"})
-user2 = User.create({first_name: 'Nevil', last_name: "Jackson", email: "nevil.jackson@gmail.com"})
+user1 = User.create({first_name: 'Blair', last_name: "Dowis", email: "blairdow@gmail.com", password: "abc123"})
+user2 = User.create({first_name: 'Nevil', last_name: "Jackson", email: "nevil.jackson@gmail.com", password: "abc123"})
 
 
 song1 = Medium.create ({song: 'FourFiveSeconds', artist: 'Kanye West', album: 'FourFiveSeconds'})

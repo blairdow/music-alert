@@ -4,7 +4,7 @@ class MediaController < ApplicationController
     end
     
     def show
-        @medium = Media.find(params[:id])
+        @medium = Medium.find(params[:id])
         @user = @medium.user
     end
     
@@ -24,12 +24,12 @@ class MediaController < ApplicationController
     
     
     def edit
-        @medium = Media.find(params[:id])
+        @medium = Medium.find(params[:id])
     end
     
     
     def update
-        @medium = Media.find(params[:id])
+        @medium = Medium.find(params[:id])
         if @medium.update_attributes(media_params)
             redirect_to user_path(@medium.user_id)
         else
@@ -38,7 +38,7 @@ class MediaController < ApplicationController
     end
     
     def destroy
-        @medium = Media.find(params[:id])
+        @medium = Medium.find(params[:id])
         @medium.destroy
         redirect_to media_path, alert: "List item removed."
     end

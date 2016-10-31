@@ -1,4 +1,17 @@
 class User < ActiveRecord::Base
+    
+    validates :email, presence: true, uniqueness: true
+    validate :email_check
+    validates :password, length: { in: 6..20 }
+    
+    validates :first_name, presence: true
+    validates :first_name, length: { minimum: 3 }
+    
+    validates :last_name, presence: true
+    validates :last_name, length: { minimum: 3 }
+    
+    has_secure_password
+    
     has_many :media
     
     has_many :active_relationships, class_name: "Relationship", 
@@ -23,4 +36,12 @@ class User < ActiveRecord::Base
     def following?(other_user)
         following.include?(other_user)
     end
+    
+    private
+        def email_check
+            unless self.email.include? '@'
+                errors.add(:email, 'not a valid email')
+            end
+        end  
+
 end
