@@ -8,8 +8,8 @@
     <% end %> 
 
 <p>Insert profile photo here</p>
-    <%= link_to 'Followers', followers_user_path %>
-    <%= link_to 'Following', following_user_path %>
+    <%= link_to "#{@user.followers.count} Followers", followers_user_path %><br>
+    <%= link_to "#{@user.following.count} Following", following_user_path %>
     
     <table class='table table-striped'>
       

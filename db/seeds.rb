@@ -51,6 +51,15 @@ nevil = User.create({first_name: 'Nevil', last_name: "Jackson", email: "nevil.ja
             )
     end
 
+#followers/following
+    users = User.all
+    150.times do
+        Relationship.create(
+            follower_id: users.shuffle.last.id,
+            followed_id: users.shuffle.last.id
+        )
+    end
+
 song1 = Medium.create ({song: 'FourFiveSeconds', artist: 'Kanye West', album: 'FourFiveSeconds'})
 song2 = Medium.create ({song: 'Hello Goodbye', artist: 'The Beatles', album: 'Hello Goodbye'})
 
@@ -58,12 +67,5 @@ song2 = Medium.create ({song: 'Hello Goodbye', artist: 'The Beatles', album: 'He
 blair.media << song1
 nevil.media << song2
 
-#followers/following
-    500.times do
-        Relationship.create (
-            follower_id: Faker::Number.between(1, 102),
-            followed_id: Faker::Number.between(1, 102)
-        )
-    end
 
 
