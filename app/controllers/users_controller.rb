@@ -28,6 +28,8 @@ class UsersController < ApplicationController
     end
     
     def show
+        @user = User.find(params[:id])
+        @media = @user.media
     end
     
     def new

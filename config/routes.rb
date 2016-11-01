@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
     
-    root 'static_pages#index'
+    root 'users#new'
     
     resources :users do 
         member do
             get :following, :followers
         end
+        resources :media, except: [:index, :show]
     end
+    
+    get '/signup', to: 'users#new'
     
     resources :relationships, only: [:create, :destroy]
     
-    resources :media
     
     resources :sessions, only: [:new, :create, :destroy]
     get '/login', to: 'sessions#new'

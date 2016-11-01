@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
     
     def authorize
-      redirect_to login_path, alert: 'Not authorized - you must be logged in!' if current_user.nil?
+      redirect_to signup_path, alert: 'You have to sign up or log in to do that!' if current_user.nil?
     end
     
     private

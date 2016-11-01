@@ -1,0 +1,83 @@
+
+<% if @media_type == 'song' %>
+    <div>
+      <%= form_for [@user, @medium] do |f| %>
+        <div class="row">
+          <div class="field col-md-3">
+            <%= f.label "Song: " %><br>
+            <%= f.text_field :song %>
+
+         <% @medium.errors.full_messages.each do |message| %>
+             <p class="text-danger"><strong><%= message %></strong></p>
+         <% end %>
+          </div>
+          <div class="field col-md-3">
+            <%= f.label "Artist: " %><br>
+            <%= f.text_field :artist %>
+          </div>
+          <div class="field col-md-3">
+            <%= f.label "Album: " %><br>
+            <%= f.text_field :album %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-2">
+            <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+              <i class="icon-ok icon-white"></i> Submit
+            <% end %>
+          </div>
+          <div class="col-md-2">
+          </div>
+        </div>
+      <% end %>
+    </div>
+<% end %>
+
+<% if @media_type == 'artist' %>
+    <div>
+      <%= form_for [@user, @medium] do |f| %>
+        <div class="row">
+          <div class="field col-md-3">
+            <%= f.label "Artist: " %><br>
+            <%= f.text_field :artist %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-2">
+            <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+              <i class="icon-ok icon-white"></i> Submit
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+<% end %>
+
+<% if @media_type == 'album' %>
+    <div>
+      <%= form_for [@user, @medium] do |f| %>
+        <div class="row">
+          <div class="field col-md-3">
+            <%= f.label "Artist: " %><br>
+            <%= f.text_field :artist %>
+          </div>
+          <div class="field col-md-3">
+            <%= f.label "Album: " %><br>
+            <%= f.text_field :album %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-2">
+            <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+              <i class="icon-ok icon-white"></i> Submit
+            <% end %>
+          </div>
+          <div class="col-md-2">
+          </div>
+        </div>
+      <% end %>
+    </div>
+<% end %>

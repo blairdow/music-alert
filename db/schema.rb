@@ -43,11 +43,11 @@ ActiveRecord::Schema.define(version: 20161028223238) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
-    t.time     "morning_commute"
-    t.time     "evening_commute"
+    t.time     "morning_commute", default: '2000-01-01 08:00:00'
+    t.time     "evening_commute", default: '2000-01-01 17:30:00'
     t.string   "profile_photo"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
   end
 
   add_foreign_key "media", "users"

@@ -21,9 +21,10 @@
         <%= f.label :last_name %>
         <%= f.text_field :last_name %>
     </div>
+    
     <div class="field">
         <%= f.label :morning_commute %>
-        <%= f.time_field :morning_commute %>
+        <%= f.time_field :morning_commute, :minute_step => 5 %>
     </div>
     <div class="field">
         <%= f.label :evening_commute %>
@@ -31,7 +32,7 @@
     </div>
     <div class="field">
         <%= f.label :email %>
-        <%= f.text_field :email %>
+        <%= f.email_field :email %>
     </div>
     <div class="field">
         <%= f.label :password %>
@@ -43,3 +44,6 @@
     </div>
     <div class="actions"><%= f.submit %></div>
 <% end %>
+
+
+<h2>Or <%= link_to 'log in here', login_path %></h2>

@@ -11,6 +11,7 @@ class MediaController < ApplicationController
     def new
         @user = User.find(params[:user_id])
         @medium = @user.media.new
+        @media_type = request.query_parameters[:media_type] 
     end
     
     def create
