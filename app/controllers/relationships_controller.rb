@@ -12,4 +12,13 @@ class RelationshipsController < ApplicationController
         current_user.unfollow(user)
         redirect_to user
     end
+    
+    private
+        def logged_in_user
+          unless current_user
+            flash[:danger] = "Please log in."
+            redirect_to login_path
+          end
+        end
+    
 end

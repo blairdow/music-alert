@@ -1,10 +1,17 @@
-<p>
-    <%= @user.first_name %>
-</p>
-<p>Insert profile photo here</p>
+
 
 <P><h1><%= @user.first_name %>'s Playlist</h1>
-  <table class='table table-striped'>
+  <% if current_user %>
+        <%= render 'follow_form' %>
+    <% else %>
+        <%= button_to "Login", root_path, { method: :get, form_class: 'btn btn-succes'} %>
+    <% end %> 
+
+<p>Insert profile photo here</p>
+    <%= link_to 'Followers', followers_user_path %>
+    <%= link_to 'Following', following_user_path %>
+    
+    <table class='table table-striped'>
       
    <tr>
        <th>Song</th>
@@ -16,7 +23,8 @@
         <td><%= medium.song %></td>
         <td><%= medium.artist %></td>
         <td><%= medium.album %></td>
-        <% if(current_user.id == @user.id) %>
+        
+        <% if current_user && (current_user.id == @user.id) %>
             <td><%= link_to 'Edit', edit_user_medium_path(current_user.id, medium.id) %></td>
         <% end %>
     </tr>
@@ -24,22 +32,19 @@
   </table>
 </P>
 
-<!--
-<div class="edit-delete">
-        <#%= link_to 'Edit', edit_tweet_path(@tweet) %>
-        <#%= link_to 'Delete', tweet_path(@tweet), method: 'delete', data: {confirm: 'You sure?'} %>
-    </div>
--->
-<% if current_user.id == @user.id %>
-    <p>Add more music...</p>
-    <p>
-        <%= link_to "Song", new_user_medium_path(current_user, :media_type => 'song') %>
-    </p>
-    <p>
-        <%= link_to "Artist", new_user_medium_path(current_user, :media_type => 'artist') %>
-    </p>
-    <p>
-        <%= link_to "Album", new_user_medium_path(current_user, :media_type => 'album') %>
-    </p>
-<% end %>
+
+
+    <% if current_user && current_user.id == @user.id %>
+        <p>Add more music...</p>
+        <p>
+            <%= link_to "Song", new_user_medium_path(current_user, :media_type => 'song') %>
+        </p>
+        <p>
+            <%= link_to "Artist", new_user_medium_path(current_user, :media_type => 'artist') %>
+        </p>
+        <p>
+            <%= link_to "Album", new_user_medium_path(current_user, :media_type => 'album') %>
+        </p>
+    <% end %>
+
 

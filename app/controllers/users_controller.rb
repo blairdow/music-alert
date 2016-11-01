@@ -1,30 +1,24 @@
 class UsersController < ApplicationController
-#    before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
-#    
-#    def following
-#    #... your logic may look differently here
-#        @title = "Following"
-#        @user  = User.find(params[:id])
-#        @users = @user.following.paginate(page: params[:page])
-#        render 'show_follow'
-#    end
-#
-#    def followers
-#    #... your logic may look differently here
-#        @title = "Followers"
-#        @user  = User.find(params[:id])
-#        @users = @user.followers.paginate(page: params[:page])
-#        render 'show_follow'
-#    end
+    before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
     
     def index
         @users = User.all
     end
-    
+
     def following
+    #... your logic may look differently here
+        @title = "Following"
+        @user  = User.find(params[:id])
+        @users = @user.following
+#        render 'show_follow'
     end
-    
+
     def followers
+    #... your logic may look differently here
+        @title = "Followers"
+        @user  = User.find(params[:id])
+        @users = @user.followers
+#        render 'show_follow'
     end
     
     def show
@@ -47,9 +41,34 @@ class UsersController < ApplicationController
         end
     end
     
+    def edit
+        @user = User.find(params[:id])
+    end
+    
+    def update
+        @user = User.find(params[:id])
+        if @user.update_attributes(user_params)
+            redirect_to user_path(@user.id)
+        else
+            render 'edit'
+        end
+    end
+    
+    def password_form
+        @user = current_user
+    end
+    
     private
         def user_params
             params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :morning_commute, :evening_commute)
         end
+    
+        def logged_in_user
+          unless current_user
+            flash[:danger] = "Please log in."
+            redirect_to login_path
+          end
+        end
+    
     
 end
