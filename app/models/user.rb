@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
     
     validates :email, presence: true, uniqueness: true
     validate :email_check
-    validates :password, length: { in: 6..20 }
+    validates :password, length: { in: 6..20 }, if: ->(obj) {obj.new_record? || !obj.password.blank? }
     
     validates :first_name, presence: true
     validates :first_name, length: { minimum: 3 }

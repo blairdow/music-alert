@@ -57,10 +57,16 @@ nevil = User.create({first_name: 'Nevil', last_name: "Jackson", email: "nevil.ja
 #followers/following
     users = User.all
     150.times do
-        Relationship.create(
-            follower_id: users.shuffle.last.id,
-            followed_id: users.shuffle.last.id
-        )
+        user1 = users.shuffle.last.id
+        user2 = users.shuffle.last.id
+        if Relationship.find(follower_id: user1, followed_id: user2)
+            puts "Caught ya!"
+        else
+            Relationship.create(
+                follower_id: user1,
+                followed_id: user2
+            )
+        end
     end
 
 song1 = Medium.create ({song: 'FourFiveSeconds', artist: 'Kanye West', album: 'FourFiveSeconds'})
