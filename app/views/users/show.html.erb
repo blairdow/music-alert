@@ -8,7 +8,7 @@
         <%= button_to "Login", root_path, { method: :get, form_class: 'btn btn-succes'} %>
     <% end %> 
 
-<p>Insert profile photo here</p>
+<p><%= image_tag @user.profile_photo.url(:thumb) %></p>
     <%= link_to "#{@user.followers.count} Followers", followers_user_path %><br>
     <%= link_to "#{@user.following.count} Following", following_user_path %>
     

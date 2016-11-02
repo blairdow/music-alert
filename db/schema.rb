@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101202955) do
+ActiveRecord::Schema.define(version: 20161102002503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,12 +43,16 @@ ActiveRecord::Schema.define(version: 20161101202955) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
-    t.time     "morning_commute",       default: '2000-01-01 08:00:00'
-    t.time     "evening_commute",       default: '2000-01-01 17:30:00'
+    t.time     "morning_commute",            default: '2000-01-01 08:00:00'
+    t.time     "evening_commute",            default: '2000-01-01 17:30:00'
     t.string   "profile_photo"
-    t.datetime "created_at",                                            null: false
-    t.datetime "updated_at",                                            null: false
+    t.datetime "created_at",                                                 null: false
+    t.datetime "updated_at",                                                 null: false
     t.string   "streaming_service_url"
+    t.string   "profile_photo_file_name"
+    t.string   "profile_photo_content_type"
+    t.integer  "profile_photo_file_size"
+    t.datetime "profile_photo_updated_at"
   end
 
   add_foreign_key "media", "users"

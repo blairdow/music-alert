@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
     
     has_secure_password
     
+    has_attached_file :profile_photo, styles: { medium: "300x300>", thumb: "100x100#" }, default_url: "/images/:style/missing.png"
+    validates_attachment_content_type :profile_photo, content_type: /\Aimage\/.*\z/
+    
+    
     has_many :media, dependent: :destroy
     
     has_many :active_relationships, class_name: "Relationship", 
