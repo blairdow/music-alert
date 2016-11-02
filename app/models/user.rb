@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
     has_secure_password
     
     has_attached_file :profile_photo, styles: { medium: "300x300>", thumb: "100x100#" }, default_url: "/default.jpg"
+    
     validates_attachment_content_type :profile_photo, content_type: /\Aimage\/.*\z/
     
     
