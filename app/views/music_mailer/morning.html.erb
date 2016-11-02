@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Good morning, <%= @user.first_name %>!</h1>
+
+    <% if @song && @artist && @album %>
+        <p>Didn't you want to listen to <%= @song %> by <%= @artist %>, from the album <%= @album %>?
+        </p>
+    <% else if @artist && @album %>
+       <p>
+       Didn't you want to listen to <%= @album %> by <%= @artist %>?
+       </p>
+    <% else %>
+       <p>
+       Didn't you want to listen to <%= @artist %> today?
+       </p>
+    <% end %>
+    <p>
+    <%= link_to 'Click here to listen!', @user.streaming_service_url %>    
+    </p> 
+    
+    <p>Enjoy! Catch you on the flipside.</p>
+    <p>-- Music Alert</p>
+
+  </body>
+</html>

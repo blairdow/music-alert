@@ -29,7 +29,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bootstrap_form'
 
-
+gem 'figaro'
 gem 'faker'
 # Use Unicorn as the app server
 # gem 'unicorn'

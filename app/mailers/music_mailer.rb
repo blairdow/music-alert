@@ -9,6 +9,6 @@ class MusicMailer < ApplicationMailer
         @artist = @selection.artist 
         @album = @selection.album 
         
-        mail(to: @user.email, subject: "Good morning!")
+        mail(to: @user.email, subject: "Good morning!", body: "test")
     end
 end

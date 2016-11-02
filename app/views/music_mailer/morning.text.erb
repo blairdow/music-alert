@@ -1,0 +1,21 @@
+
+Good morning, <%= @user.first_name %>!
+
+    <% if @song && @artist && @album %>
+       Didn't you want to listen to <%= @song %> by <%= @artist %>, from the album <%= @album %>?
+        
+    <% else if @artist && @album %>
+      
+       Didn't you want to listen to <%= @album %> by <%= @artist %>?
+       
+    <% else %>
+      
+       Didn't you want to listen to <%= @artist %> today?
+       
+    <% end %>
+   
+    <%= link_to 'Click here to listen!', @user.streaming_service_url %>    
+    
+    
+    Enjoy! Catch you on the flipside.
+    -- Music Alert

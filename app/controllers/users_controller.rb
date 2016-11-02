@@ -48,7 +48,9 @@ class UsersController < ApplicationController
     def update
         @user = User.find(params[:id])
         if @user.update_attributes(user_params)
+#            MusicMailer.morning_email(@user).deliver
             redirect_to user_path(@user.id)
+            
         else
             render 'edit'
         end
