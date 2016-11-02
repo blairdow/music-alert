@@ -56,16 +56,16 @@ nevil = User.create({first_name: 'Nevil', last_name: "Jackson", email: "nevil.ja
 
 #followers/following
     users = User.all
-    150.times do
+    1000.times do
         user1 = users.shuffle.last.id
         user2 = users.shuffle.last.id
-        if Relationship.find(follower_id: user1, followed_id: user2)
-            puts "Caught ya!"
+        if  Relationship.where(follower_id: user1, followed_id: user2) != []
+            puts "whoops"
         else
             Relationship.create(
                 follower_id: user1,
                 followed_id: user2
-            )
+            ) 
         end
     end
 

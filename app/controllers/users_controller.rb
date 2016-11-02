@@ -3,6 +3,11 @@ class UsersController < ApplicationController
     
     def index
         @users = User.all
+        if params[:search]
+            @users = User.search(params[:search]).order("created_at DESC")
+        else
+            @users = User.all.order("created_at DESC")
+        end
     end
 
     def following
@@ -10,7 +15,7 @@ class UsersController < ApplicationController
         @title = "Following"
         @user  = User.find(params[:id])
         @users = @user.following
-#        render 'show_follow'
+
     end
 
     def followers
@@ -18,7 +23,7 @@ class UsersController < ApplicationController
         @title = "Followers"
         @user  = User.find(params[:id])
         @users = @user.followers
-#        render 'show_follow'
+
     end
     
     def show
@@ -34,8 +39,8 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            flash[:notice] = "You have successfully signed up!"
-            redirect_to root_path
+            flash[:notice] = "You have successfully signed up! You can now add music to your list, and follow other users."
+            redirect_to user_path(@user.id)
         else
             render 'new'
         end
@@ -49,8 +54,7 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         if @user.update_attributes(user_params)
 #            MusicMailer.morning_email(@user).deliver
-            redirect_to user_path(@user.id)
-            
+            redirect_to user_path(@user.id)    
         else
             render 'edit'
         end

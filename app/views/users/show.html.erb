@@ -1,4 +1,6 @@
-
+<% flash.each do |type, message| %>
+<p class='flash'><strong><%= message %></strong></p>
+<% end %>
 
 <P><h1><%= @user.first_name %>'s Playlist</h1>
 

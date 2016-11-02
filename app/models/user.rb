@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
     
     has_secure_password
     
-    has_attached_file :profile_photo, styles: { medium: "300x300>", thumb: "100x100#" }, default_url: "/images/:style/missing.png"
+    has_attached_file :profile_photo, styles: { medium: "300x300>", thumb: "100x100#" }, default_url: "/default.jpg"
     validates_attachment_content_type :profile_photo, content_type: /\Aimage\/.*\z/
     
     
@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
                                     dependent: :destroy
     has_many :following, through: :active_relationships, source: :followed
     has_many :followers, through: :passive_relationships    
+    
+    def self.search(search)
+        where("first_name ILIKE ? OR last_name ILIKE ?", "%#{search}%", "%#{search}%") 
+    end
     
     def full_name
         self.first_name << " " << self.last_name

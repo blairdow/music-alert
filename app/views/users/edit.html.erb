@@ -12,6 +12,11 @@
             <%= f.label 'Last Name: ' %>
             <%= f.text_field :last_name %>
         </div>
+        
+        <div class="field">
+            <%= f.label :profile_photo %>
+            <%= f.file_field :profile_photo %>
+        </div>
 
         <div class="field">
             <%= f.label 'What time does your morning commute start? ' %>
