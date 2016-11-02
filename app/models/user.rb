@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    before_create :set_time_zone
+#    before_create :set_time_zone
     validates :email, uniqueness: true
     validate :email_check
     validates :password, length: { in: 6..20 }, if: ->(obj) {obj.new_record? || !obj.password.blank? }
@@ -46,10 +46,10 @@ class User < ActiveRecord::Base
         following.include?(other_user)
     end
     
-    def set_time_zone
-        self.morning_commute = self.morning_commute.in_time_zone(self.time_zone)
-
-    end
+#    def set_time_zone
+#        self.morning_commute = self.morning_commute.in_time_zone(self.time_zone)
+#
+#    end
     
     private
         def email_check

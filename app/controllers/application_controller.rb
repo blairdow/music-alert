@@ -13,9 +13,9 @@ class ApplicationController < ActionController::Base
         def current_user
             @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
         end
-        
-        def set_user_time_zone
-            Time.zone = current_user.time_zone if current_user
-        end
-    
+#        
+#        def set_user_time_zone
+#            Time.zone = current_user.time_zone if current_user
+#        end
+#    
 end
