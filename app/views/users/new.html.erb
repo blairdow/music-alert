@@ -24,10 +24,13 @@
         <%= f.label :profile_photo %>
         <%= f.file_field :profile_photo %>
     </div>
-    
+    <div class="field">
+        <%= f.label :time_zone %>
+        <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones %> 
+    </div>
     <div class="field">
         <%= f.label :morning_commute %>
-        <%= f.time_field :morning_commute, :minute_step => 5 %>
+        <%= f.time_field :morning_commute %>
     </div>
     <div class="field">
         <%= f.label :evening_commute %>

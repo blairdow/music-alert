@@ -17,7 +17,9 @@
             <%= f.label :profile_photo %>
             <%= f.file_field :profile_photo %>
         </div>
-
+        <div class="field">
+            <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones %> 
+        </div>
         <div class="field">
             <%= f.label 'What time does your morning commute start? ' %>
             <%= f.time_field :morning_commute %>

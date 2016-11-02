@@ -71,6 +71,22 @@ config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true
     }
 
+    
+    config.paperclip_defaults = {
+        storage: :s3,
+        s3_protocol: :https,
+        s3_credentials: {
+          bucket: ENV.fetch('S3_BUCKET_NAME'),
+          access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+          secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+          s3_region: ENV.fetch('AWS_REGION'),
+        },
+        :url =>':s3_domain_url',
+        :path => '/:class/:attachment/:id_partition/:style/:filename',
+    }
+
+  config.serve_static_files = true
+  config.assets.compile = true
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false

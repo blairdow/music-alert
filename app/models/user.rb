@@ -1,14 +1,11 @@
 class User < ActiveRecord::Base
-    
-    validates :email, presence: true, uniqueness: true
+    before_create :set_time_zone
+    validates :email, uniqueness: true
     validate :email_check
     validates :password, length: { in: 6..20 }, if: ->(obj) {obj.new_record? || !obj.password.blank? }
     
-    validates :first_name, presence: true
-    validates :first_name, length: { minimum: 3 }
-    
-    validates :last_name, presence: true
-    validates :last_name, length: { minimum: 3 }
+    validates :first_name,:morning_commute, :evening_commute, :email, presence: true
+    validates :first_name, :last_name, length: { minimum: 3 }
     
     has_secure_password
     
@@ -47,6 +44,11 @@ class User < ActiveRecord::Base
       # Returns true if the current user is following the other user.
     def following?(other_user)
         following.include?(other_user)
+    end
+    
+    def set_time_zone
+        self.morning_commute = self.morning_commute.in_time_zone(self.time_zone)
+
     end
     
     private

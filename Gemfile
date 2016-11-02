@@ -31,6 +31,13 @@ gem 'bootstrap_form'
 
 gem 'figaro'
 gem 'faker'
+gem 'resque'
+gem "paperclip", "~> 5.0.0"
+gem 'resque-scheduler'
+gem 'resque-web', require: 'resque_web'
+gem 'redis', '~>3.2'
+gem 'aws-sdk', '~>2.3'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -47,9 +54,12 @@ group :development do
   gem 'web-console', '~> 2.0'
 
   gem 'pry'
+  gem 'dotenv-rails'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
-gem "paperclip", "~> 5.0.0"
-
+group :production do
+    gem 'rails_12factor'
+    gem 'thin'
+end
