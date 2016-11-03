@@ -33,6 +33,7 @@ gem 'figaro'
 gem 'faker'
 gem 'resque'
 gem "paperclip", "~> 5.0.0"
+gem 'whenever', require: false
 gem 'resque-scheduler'
 gem 'resque-web', require: 'resque_web'
 gem 'redis', '~>3.2'

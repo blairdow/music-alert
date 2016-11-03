@@ -3,7 +3,7 @@
 <% end %>
 
 <P><h1><%= @user.first_name %>'s Playlist</h1>
-
+<div class="container">
   <% if current_user %>
         <%= render 'follow_form' %>
     <% else %>
@@ -38,16 +38,24 @@
 
 
     <% if current_user && current_user.id == @user.id %>
-        <p>Add more music...</p>
-        <p>
-            <%= link_to "Song", new_user_medium_path(current_user, :media_type => 'song') %>
-        </p>
-        <p>
-            <%= link_to "Artist", new_user_medium_path(current_user, :media_type => 'artist') %>
-        </p>
-        <p>
-            <%= link_to "Album", new_user_medium_path(current_user, :media_type => 'album') %>
-        </p>
-    <% end %>
+        <div class="roq">
+            <p>Add more music...</p>
+            <div class="media-block">
+                <div class="media-box col-xs-4">
+                    <%= link_to "Song", new_user_medium_path(current_user, :media_type => 'song') %>
+                </div>
 
+               <div class="media-box col-xs-4">
+                    <%= link_to "Artist", new_user_medium_path(current_user, :media_type => 'artist') %>
+               </div>
+
+               <div class="media-box col-xs-4">
+                    <%= link_to "Album", new_user_medium_path(current_user, :media_type => 'album') %>
+               </div>
+            </div>    
+            
+        </div>
+        
+    <% end %>
+</div>
 

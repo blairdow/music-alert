@@ -17,3 +17,31 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.small {
+    width: 50px;
+}
+
+.welcome {
+    display: inline-block;
+    margin: 15px;
+    font-size: 1.25em;
+}
+
+.welcome img {
+    margin: 0 10px;
+}
+
+.form-group {
+    padding: 15px;
+}
+
+.edit-profile, .logout {
+    display: inline-block;
+    margin: 10px;
+    font-size: 1em;
+}
+
+
+
+
