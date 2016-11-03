@@ -9,6 +9,8 @@ Rails.application.configure do
          :authentication       => "plain",
         :enable_starttls_auto => true
         }
+    
+#    config.active_job.queue_adapter = :delayed_job
   
     config.paperclip_defaults = {
         storage: :s3,

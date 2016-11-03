@@ -1,7 +1,7 @@
 class SendEmailJob < ActiveJob::Base
   queue_as :default
 
-  def perform(*args)
-    # Do something later
+  def perform(user)
+   @user = user MusicMailer.send_signup_email(@user).deliver_later
   end
 end

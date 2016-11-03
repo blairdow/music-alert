@@ -8,13 +8,15 @@ class MusicMailer < ApplicationMailer
     end
     
     def morning_email(user)
-        @user = user
+        @users = User.all
+        
+        @user = User.first
         
         @selection = @user.media.shuffle.last
         @song = @selection.song
         @artist = @selection.artist 
         @album = @selection.album 
         
-        mail(to: @user.email, subject: "Good morning!", body: "test")
+        mail(to: @user.email, subject: "Good morning!")
     end
 end

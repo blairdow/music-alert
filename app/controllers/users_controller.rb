@@ -41,9 +41,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-#            Resque.enqueue(Sleeper)
-            flash[:notice] = "You have successfully signed up! You can now add music to your list, and follow other users." 
-#            MusicMailer.send_signup_email(@user).deliver
+            flash[:notice] = "You have successfully signed up! You can now add music to your list, and follow other users."  
             redirect_to user_path(@user.id)
         else
             render 'new'
@@ -66,16 +64,7 @@ class UsersController < ApplicationController
     def password_form
         @user = current_user
     end
-    
-#    def morning_email
-#        @users = User.all
-#        @users.each do |user|
-#            t = user.morning_commute.utc.strftime( "%H%M")
-#            if Time.now( "%H%M" ) == t
-#                MusicMailer.send_signup_email(@user).deliver
-#            end
-#        end 
-#    end
+
     
     private
         def user_params
