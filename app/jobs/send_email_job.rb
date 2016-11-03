@@ -1,18 +1,15 @@
 class SendEmailJob < ActiveJob::Base
 #  queue_as :default
-    
-#    Users = User.all
-    def self.send_morning_email
-        puts "sending morning email"
-        while true
-            sleep 1
-            MusicMailer.send_signup_email.deliver!
+    class << self
+            
+        def send_morning_email
+            @users = User.all
+            @users.each do |user|
+                puts "sent"
+                @morning_commute = user.morning_commute.strftime( "%H%M" ) 
+                MusicMailer.morning_email(user).deliver!
+            end
         end
-#        Users.each do |user|
-#        MusicMailer.morning_email(user).deliver!
-#        end
-#        Time = user.morning_commute.strftime ("%H%M")
+        handle_asynchronously :send_morning_email, :run_at => Proc.new { @morning_commute }
     end
-#    handle_asynchronously :in_the_future, :run_at => Time
-    
 end
