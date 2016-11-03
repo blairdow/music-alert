@@ -42,6 +42,7 @@ class UsersController < ApplicationController
         if @user.save
             session[:user_id] = @user.id
             flash[:notice] = "You have successfully signed up! You can now add music to your list, and follow other users."  
+            MusicMailer.send_morning_email(@user)
             redirect_to user_path(@user.id)
         else
             render 'new'

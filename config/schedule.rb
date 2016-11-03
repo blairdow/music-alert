@@ -1,10 +1,10 @@
 #require '../app/models/user'
 
-every :day, at: '3:30am' do 
+every :weekday, at: '9:55am' do 
     rake 'send_morning_email'
 end
 
-every :day, at: '8:20pm' do
+every :weekday, at: '4:55pm' do
     rake 'send_morning_email'
 end
 

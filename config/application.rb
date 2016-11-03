@@ -27,6 +27,9 @@ module MusicAlert
             
 #    config.time_zone = 'Pacific Time (US & Canada)'
     config.active_record.default_timezone = :local
+    config.active_job.queue_adapter = :delayed_job
+    config.active_job.queue_name_prefix = Rails.env
+    
       
       # Or :utc
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.

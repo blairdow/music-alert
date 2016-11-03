@@ -40,17 +40,24 @@
     <% if current_user && current_user.id == @user.id %>
         <div class="roq">
             <p>Add more music...</p>
-            <div class="media-block">
-                <div class="media-box col-xs-4">
+            <div class="row">
+                <div class="media-box col-sm-4 panel panel-default">
+                    <div class="panel-body">
                     <%= link_to "Song", new_user_medium_path(current_user, :media_type => 'song') %>
+                        
+                    </div>
                 </div>
 
-               <div class="media-box col-xs-4">
-                    <%= link_to "Artist", new_user_medium_path(current_user, :media_type => 'artist') %>
+                <div class="media-box col-sm-4 panel panel-default">   
+                    <div class="panel-body">
+                        <%= link_to "Artist", new_user_medium_path(current_user, :media_type => 'artist') %>
+                    </div>                 
                </div>
 
-               <div class="media-box col-xs-4">
-                    <%= link_to "Album", new_user_medium_path(current_user, :media_type => 'album') %>
+               <div class="media-box col-sm-4 panel panel-default">
+                   <div class="panel-body">
+                        <%= link_to "Album", new_user_medium_path(current_user, :media_type => 'album') %>
+                   </div>
                </div>
             </div>    
             
