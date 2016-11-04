@@ -2,17 +2,38 @@
 <p class='flash'><strong><%= message %></strong></p>
 <% end %>
 
-<P><h1><%= @user.first_name %>'s Playlist</h1>
 <div class="container">
-  <% if current_user %>
-        <%= render 'follow_form' %>
-    <% else %>
-        <%= button_to "Login", root_path, { method: :get, form_class: 'btn btn-succes'} %>
-    <% end %> 
+<div class="row">
+     <div class='playlist-name'>
+         <h1><%= @user.first_name %>'s Playlist</h1>
+          <% if current_user %>
+                <%= render 'follow_form' %>
+            <% else %>
+                <%= button_to "Login", root_path, { method: :get, form_class: 'btn btn-succes'} %>
+            <% end %> 
 
-<p><%= image_tag @user.profile_photo.url(:thumb) %></p>
-    <%= link_to "#{@user.followers.count} Followers", followers_user_path %><br>
-    <%= link_to "#{@user.following.count} Following", following_user_path %>
+        <p><%= image_tag @user.profile_photo.url(:thumb) %></p>
+            
+                <div class="row row-centered">
+                    <div class="col-sm-3 col-centered">
+                        <div class="follow panel panel-default">
+                            <div class="panel-body">
+                                <%= link_to "#{@user.followers.count} Followers", followers_user_path %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-centered">
+                        <div class="follow panel panel-default">
+                            <div class="panel-body">
+                                <%= link_to "#{@user.following.count} Following", following_user_path %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         
+         
+     </div>
+</div>
     
     <table class='table table-striped'>
       
@@ -33,14 +54,13 @@
     </tr>
     <% end %>    
   </table>
-</P>
 
 
 
     <% if current_user && current_user.id == @user.id %>
-        <div class="roq">
-            <p>Add more music...</p>
-            <div class="row">
+        <div class="row">
+            <h2  class='playlist-name'>Add more music...</h2>
+            
                 <div class="media-box col-sm-4 panel panel-default">
                     <div class="panel-body">
                     <%= link_to "Song", new_user_medium_path(current_user, :media_type => 'song') %>
@@ -58,11 +78,10 @@
                    <div class="panel-body">
                         <%= link_to "Album", new_user_medium_path(current_user, :media_type => 'album') %>
                    </div>
-               </div>
-            </div>    
+               </div>  
             
         </div>
         
     <% end %>
-</div>
+    </div>
 

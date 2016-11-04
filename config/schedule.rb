@@ -1,12 +1,12 @@
 #require '../app/models/user'
 
-every :weekday, at: '9:55am' do 
+every 1.minutes do 
     rake 'send_morning_email'
 end
 
-every :weekday, at: '4:55pm' do
-    rake 'send_morning_email'
-end
+#every :weekday, at: '4:55pm' do
+#    rake 'send_morning_email'
+#end
 
 #@users = User.all
 #

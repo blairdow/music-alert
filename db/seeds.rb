@@ -13,7 +13,7 @@ blair = User.create({first_name: 'Blair', last_name: "Dowis", email: "blairdow@g
 nevil = User.create({first_name: 'Nevil', last_name: "Jackson", email: "nevil.jackson@gmail.com", password: "abc123", streaming_service_url: 'https://play.spotify.com/browse'})
 
     #users
-    102.times do 
+    200.times do 
         services = ['https://play.spotify.com/browse', 'https://listen.tidal.com/']
         num = Faker::Number.between(0, 1)
         User.create(
@@ -56,7 +56,7 @@ nevil = User.create({first_name: 'Nevil', last_name: "Jackson", email: "nevil.ja
 
 #followers/following
     users = User.all
-    1000.times do
+    500.times do
         user1 = users.shuffle.last.id
         user2 = users.shuffle.last.id
         if  Relationship.where(follower_id: user1, followed_id: user2) != []
