@@ -47,7 +47,7 @@ The site is deployed with Ubuntu on [Amazon Web Services EC2](https://aws.amazon
 * [**Bootstrap**](https://rubygems.org/gems/bootstrap): for Bootstrap CSS framework
 * [**Figaro**](https://github.com/laserlemon/figaro): to securely store configuration values  
 
-##Rails/Ruby Functions Used
+##Development
 * Rails Action Mailer was used to create formatted email for each user
 * A rake task and Cron were used to automate email sending at user-specific time
 * Rails Sessions were used to keep user logged in and separate functionality for logged in vs. logged out, as well as separate functionality on a user's own profile page
@@ -56,6 +56,7 @@ The site is deployed with Ubuntu on [Amazon Web Services EC2](https://aws.amazon
 * I attempted to use Redis and the Resque gem to schedule email sending, but in the end Cron was the right option. It was still cool to learn how to use Redis though!
 * sensitive information (gmail login to send emails and Amazon web services key) was kept secure using the Figaro gem and .gitignore
 * Search function was added with [this tutorial](http://www.rymcmahon.com/articles/2) created by [Ryan McMahon](https://github.com/rymcmahon). 
+* Default user profile image is a shark/seagull. Upload your own to get rid of this creepy thing!
 
 ##Planning
 * [Trello](https://trello.com/b/dSzsG32O/musicreminders)
