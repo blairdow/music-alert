@@ -1,15 +1,18 @@
-<h1>log in</h1>
-<p id="alert"><%= alert %></p>
+<div class="wrapper">
+    <h1 class='hero'>Log in!</h1>
+    <div class="blurb">Welcome back, friend.</div>
+    <p id="alert"><%= alert %></p>
 
 
-<%= form_tag sessions_path do %>
-    <div class="field">
-        <%= label_tag :email %>
-        <%= text_field_tag :email, params[:email] %>
-    </div>
-    <div class="field">
-        <%= label_tag :password %>
-        <%= password_field_tag :password %>
-    </div>
-    <div class="actions"><%= submit_tag "Log In" %></div>
-<% end %>
+    <%= form_tag sessions_path do %>
+        <div class="field form-group">
+            <%= label_tag :email %>
+            <%= text_field_tag :email, params[:email] %>
+        </div>
+        <div class="field form-group">
+            <%= label_tag :password %>
+            <%= password_field_tag :password %>
+        </div>
+        <div class="actions"><%= submit_tag "Log In" %></div>       
+    <% end %>
+</div>

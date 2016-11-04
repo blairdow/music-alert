@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-    include Sleeper
-    
     before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
     
     def index

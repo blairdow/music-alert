@@ -18,16 +18,41 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body{
+    font-family: Itim, sans-serif;
+    background-color: #f7f7f7;
+    color: #5f5f5f;
+    
+}
+
+td, form {
+    font-family: Helvetica, sans-serif;
+}
+
+a {
+    color: blueviolet;
+}
+
+a:hover {
+    text-decoration: line-through;
+    color: #b82be2;
+}
+
 .small {
     width: 50px;
 }
 
-.welcome, .edit-profile, .logout {
+.welcome, .edit-profile, .logout, .login, .signup {
     display: inline-block;
 }
 
-.edit-profile, .logout {
-    font-size: 1em;
+.edit-profile, .logout, .login, .signup  {
+    font-size: 1.25em;
+    text-align: center;
+}
+
+.login, .signup {
+    margin: 5px;
 }
 
 .welcome {
@@ -39,19 +64,10 @@
     margin: 0 10px;
 }
 
-//.form-group {
-//    padding: 15px;
-//}
-
-//.edit-profile, .logout {
-//    display: inline-block;
-//    margin: 10px;
-//    font-size: 1em;
-//}
-
 .media-box .panel-body {
     padding-top: 50px;
     padding-bottom: 50px;
+    background-color: white;
 }
 
 .form-group {
@@ -62,10 +78,70 @@
     text-align: center;
 }
 
-.container {
-//    margin: 0 auto;
+.song-table {
+    margin: 0 auto;
+    width: 80%;   
 }
 
-.follow {
-    
+.follow-item {
+    margin: 5px; 
+}
+
+.follow-item a, .pw-link {
+    font-size: 1.25em;
+}
+
+.pw-link {
+    margin-top: 50px;
+}
+
+.follow-item:last-child {
+    margin-bottom: 30px;
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.wrapper .actions {
+    color: blueviolet;
+    font-family: Itim, sans-serif;
+    margin-bottom: 50px;
+}
+
+.hero {
+    color: blueviolet;
+    text-align: center;
+}
+
+.blurb{
+    text-align: center;
+    width: 80%;
+}
+
+.title {
+    color: blueviolet;
+    text-shadow: 1px 1px rgb(0, 216, 255);
+}
+
+.edit {
+    margin-bottom: 30px;
+}
+
+.save-changes-btn {
+    font-family: Itim, sans-serif;
+}
+
+th {
+    font-size: 1.25em;
+    color: blueviolet;
+}
+
+
+.search-result {
+    display: inline-block;
+    margin: 5px;
 }

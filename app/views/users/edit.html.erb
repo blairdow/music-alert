@@ -1,46 +1,54 @@
-<%= form_for @user, url: user_path(@user), method: :patch do |f| %>
+<div class="wrapper">
+    <h1 class="hero edit">Edit Profile</h1>
+         
+         <%= form_for @user, url: user_path(@user), method: :patch do |f| %>
 
-     <% @user.errors.full_messages.each do |message| %>
-         <p class="text-danger"><strong><%= message %></strong></p>
-     <% end %>
-      
-        <div class="field">
-            <%= f.label 'First Name: ' %>
-            <%= f.text_field :first_name %>
-        </div>   
-        <div class="field">
-            <%= f.label 'Last Name: ' %>
-            <%= f.text_field :last_name %>
+         <% @user.errors.full_messages.each do |message| %>
+             <p class="text-danger"><strong><%= message %></strong></p>
+         <% end %>
+
+            <div class="field form-group">
+                <%= f.label 'First Name: ' %>
+                <%= f.text_field :first_name %>
+            </div>   
+            <div class="field form-group">
+                <%= f.label 'Last Name: ' %>
+                <%= f.text_field :last_name %>
+            </div>
+
+            <div class="field form-group">
+                <%= f.label :profile_photo %>
+                <%= f.file_field :profile_photo %>
+            </div>
+    <!--
+            <div class="field">
+                <#%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones %> 
+            </div>
+    -->
+            <div class="field form-group">
+                <%= f.label 'What time does your morning commute start? ' %>
+                <%= f.time_field :morning_commute %>
+            </div>
+            <div class="field form-group">
+                <%= f.label 'What time does your evening commute start? ' %>
+                <%= f.time_field :evening_commute %>
+            </div>
+            <div class="field form-group">
+                <%= f.label 'Email: ' %>
+                <%= f.email_field :email %>
+            </div>
+
+        <br>
+        <div class="row">
+          <div class="col-md-2">
+            <div class="save-changes-btn">
+             <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+              <i class="icon-ok icon-white"></i> Save changes
+            <% end %>
+            </div>
+          </div>
         </div>
-        
-        <div class="field">
-            <%= f.label :profile_photo %>
-            <%= f.file_field :profile_photo %>
-        </div>
-        <div class="field">
-            <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones %> 
-        </div>
-        <div class="field">
-            <%= f.label 'What time does your morning commute start? ' %>
-            <%= f.time_field :morning_commute %>
-        </div>
-        <div class="field">
-            <%= f.label 'What time does your evening commute start? ' %>
-            <%= f.time_field :evening_commute %>
-        </div>
-        <div class="field">
-            <%= f.label 'Email: ' %>
-            <%= f.email_field :email %>
-        </div>
-    
-    <br>
-    <div class="row">
-      <div class="col-md-2">
-        <%= button_tag(type: 'submit', class: "btn btn-success") do %>
-          <i class="icon-ok icon-white"></i> Save changes
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-  
-  <%= link_to "Change password?", change_password_path %>
+      <% end %>
+
+      <%= link_to "Change password?", change_password_path, class: "pw-link" %>
+  </div>
