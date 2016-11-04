@@ -2,10 +2,10 @@ class MusicMailer < ApplicationMailer
     default from: "musicalert1@gmail.com"
     require 'user'
     
-    def send_signup_email
-        @user = 'blairdow@gmail.com'
-        mail( :to => @user,
-        :subject => 'Thanks for signing up for our amazing app' )
+    def send_signup_email(user)
+        @user = user
+        mail( :to => @user.email,
+        :subject => 'Thanks for signing up for Music Alert!' )
     end
     
     

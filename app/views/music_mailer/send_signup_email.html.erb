@@ -4,8 +4,15 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Thanks for signing up, <%= @user %>!</h1>
-    <p>Thanks for joining and have a great day! Now sign in and do
-awesome things!</p>
+    <h1>Thanks for signing up for Music Alert, <%= @user.first_name %>!</h1>
+    <p>Thanks for joining and have a great day! </p>
+ <p>
+    You can now add music to your list, edit your profile, follow other users, and even search for your friends! 
+ </p>
+ <p>Check out the project's <%= link_to 'Github', 'https://github.com/blairdow/music-alert' %> for more info.</p>
+ 
+ <p>Love,
+ <br>
+ Music Alert</p>
   </body>
 </html>
