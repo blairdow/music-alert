@@ -43,7 +43,7 @@ a {
     color: $titlecolor;
 }
 
-a:hover {
+.login-link:hover a {
     text-decoration: line-through;
     color: #b82be2;
 }
