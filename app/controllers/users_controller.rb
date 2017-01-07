@@ -11,7 +11,6 @@ class UsersController < ApplicationController
     end
 
     def following
-    #... your logic may look differently here
         @title = "Following"
         @user  = User.find(params[:id])
         @users = @user.following
@@ -19,7 +18,6 @@ class UsersController < ApplicationController
     end
 
     def followers
-    #... your logic may look differently here
         @title = "Followers"
         @user  = User.find(params[:id])
         @users = @user.followers

@@ -2,7 +2,6 @@ desc 'send morning email'
 task send_morning_email: :environment do
     @users = User.all
         @users.each do |user|
-            
             time_now = Time.now
             puts user.morning_commute
             puts Time.now

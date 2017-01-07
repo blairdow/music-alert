@@ -2,7 +2,9 @@
 <html>
 <head>
   <title>MusicAlert</title>
-  <%= stylesheet_link_tag    'application', "https://fonts.googleapis.com/css?family=Itim", media: 'all', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <%= stylesheet_link_tag    'application', "https://fonts.googleapis.com/css?family=Abel|Source+Sans+Pro", media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -49,7 +51,9 @@
     </div>
 </nav>
 
-<%= yield %>
+<div class="container-fluid">
+    <%= yield %>
+</div>
 
 </body>
 </html>
