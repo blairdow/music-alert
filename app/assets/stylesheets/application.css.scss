@@ -25,6 +25,7 @@ body{
     font-family: 'Source Sans Pro', sans-serif;
     background-color: #f7f7f7;
     color: #5f5f5f;
+    padding-top: 70px;
 }
 
 h1 {
@@ -43,6 +44,12 @@ a {
     color: $titlecolor;
 }
 
+//navbar 
+.navbar-text {
+    font-size: 1.25em;
+}
+
+//NEW USER PAGE (sign up form)
 .login-link:hover a {
     text-decoration: line-through;
     color: #b82be2;
@@ -52,9 +59,6 @@ a {
     margin-bottom: 15px;
 }
 
-.small {
-    width: 50px;
-}
 
 .welcome, .edit-profile, .logout, .login, .signup {
 //    display: inline-block;
@@ -63,10 +67,6 @@ a {
 .edit-profile, .logout, .login, .signup  {
     font-size: 1.25em;
 //    text-align: center;
-}
-
-.login, .signup {
-//    margin: 5px;
 }
 
 .welcome {
@@ -82,10 +82,6 @@ a {
     padding-top: 50px;
     padding-bottom: 50px;
     background-color: white;
-}
-
-.form-group {
-//    margin-top: 5px;
 }
 
 .playlist-name {
