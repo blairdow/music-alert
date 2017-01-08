@@ -4,87 +4,86 @@
 
 
 
-     <div class='page-header text-center'>
-         
-        <h1 class='title'><%= @user.first_name %>'s Playlist</h1>
+     <div class='panel panel-default'>
+        <div class="panel-heading text-center">
+            <h1 class='title'><%= @user.first_name %>'s Playlist</h1>
+        </div>
         
-        <!--USER PROFILE IMAGE-->
-        <p><%= image_tag @user.profile_photo.url(:thumb), class: 'img-rounded profile-img' %></p>
-        
-        
-        <% if current_user %>
-            <%= render 'follow_form' %>
-        <% else %>
-            <%= button_to "Login", root_path, { method: :get, class: 'btn btn-default'} %>
-        <% end %> 
+        <!--USER PROFILE INFO-->
+        <div class="panel-body text-center">
+            <p><%= image_tag @user.profile_photo.url(:thumb), class: 'img-rounded profile-img' %></p>
 
-            
-                
-                        
+            <% if current_user %>
+                <%= render 'follow_form' %>
+            <% else %>
+                <%= button_to "Login", login_path, { method: :get, class: 'btn btn-default'} %>
+            <% end %> 
+
+            <!-- USER FOLLOWERS-->
             <div class="follow-item">
                 <%= link_to "#{@user.followers.count} Followers", followers_user_path %>
             </div>
 
-
-
-
             <div class="follow-item">
                 <%= link_to "#{@user.following.count} Following", following_user_path %>
             </div>
-                       
         </div>
 
-
-    <div class="song-table">
         <table class='table table-striped table-bordered'>
 
-       <tr>
-           <th>Song</th>
-           <th>Artist</th>
-           <th>Album</th>
-       </tr>
-        <tr>
-           <% @media.each do |medium| %>
-            <td><%= medium.song %></td>
-            <td><%= medium.artist %></td>
-            <td><%= medium.album %></td>
+            <tr>
+                <th>Song</th>
+                <th>Artist</th>
+                <th>Album</th>
+                <% if current_user && (current_user.id == @user.id) %>
+                    <th></th>
+                <% end %>
+            </tr>
+            <tr>
+                <% @media.each do |medium| %>
+                    <td><%= medium.song %></td>
+                    <td><%= medium.artist %></td>
+                    <td><%= medium.album %></td>
 
-            <% if current_user && (current_user.id == @user.id) %>
-                <td><%= link_to 'Edit', edit_user_medium_path(current_user.id, medium.id) %></td>
-            <% end %>
-        </tr>
-        <% end %>    
-      </table>
+                <!--if current user, show link to edit media-->
+                    <% if current_user && (current_user.id == @user.id) %>
+                        <td><%= link_to 'Edit', edit_user_medium_path(current_user.id, medium.id) %></td>
+                    <% end %>
+            </tr>
+                <% end %>    
+        </table>
         
-    </div>
-
-
-
-    <% if current_user && current_user.id == @user.id %>
-        <div class="row">
-            <h2  class='playlist-name hero'>Add more music...</h2>
-            
-                <div class="media-box col-sm-4 panel panel-default">
-                    <div class="panel-body">
-                    <%= link_to "Song", new_user_medium_path(current_user, :media_type => 'song') %>
-                        
-                    </div>
-                </div>
-
-                <div class="media-box col-sm-4 panel panel-default">   
-                    <div class="panel-body">
-                        <%= link_to "Artist", new_user_medium_path(current_user, :media_type => 'artist') %>
-                    </div>                 
-               </div>
-
-               <div class="media-box col-sm-4 panel panel-default">
-                   <div class="panel-body">
-                        <%= link_to "Album", new_user_medium_path(current_user, :media_type => 'album') %>
-                   </div>
-               </div>  
-            
         </div>
         
-    <% end %>
+<!--BUTTONS TO ADD MUSIC IF CURRENT USER-->
+        <% if current_user && current_user.id == @user.id %>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Add more music...</h3>   
+                </div>
+
+                    <div class="media-box panel panel-default">
+                        <div class='panel-body'>
+                            <%= link_to "Song", new_user_medium_path(current_user, :media_type => 'song') %>
+                        </div>
+                    </div>
+
+                    <div class="media-box panel panel-default">   
+                        <div class="panel-body">
+                            <%= link_to "Artist", new_user_medium_path(current_user, :media_type => 'artist') %>
+                        </div>                 
+                   </div>
+
+                   <div class="media-box panel panel-default">
+                       <div class="panel-body">
+                            <%= link_to "Album", new_user_medium_path(current_user, :media_type => 'album') %>
+                       </div>
+                   </div>  
+            </div>
+        <% end %>
+
+
+
+
    
 

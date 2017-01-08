@@ -18,9 +18,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+//SaSS vars
 $titlefont : 'Abel', sans-serif;
 $titlecolor: blueviolet;
 
+//General styling
 body{
     font-family: 'Source Sans Pro', sans-serif;
     background-color: #f7f7f7;
@@ -28,7 +30,7 @@ body{
     padding-top: 70px;
 }
 
-h1 {
+h1, h2, h3, th, .media-box {
     font-family: $titlefont;
 }
 
@@ -42,6 +44,10 @@ td, form {
 
 a {
     color: $titlecolor;
+}
+
+.edit-profile, .logout, .login, .signup  {
+    font-size: 1.25em;
 }
 
 //navbar 
@@ -60,15 +66,6 @@ a {
 }
 
 
-.welcome, .edit-profile, .logout, .login, .signup {
-//    display: inline-block;
-}
-
-.edit-profile, .logout, .login, .signup  {
-    font-size: 1.25em;
-//    text-align: center;
-}
-
 .welcome {
     font-size: 1.25em;
     margin: 5px;
@@ -78,19 +75,23 @@ a {
     margin: 0 10px;
 }
 
-.media-box .panel-body {
+//USER SHOW PAGE
+.media-box {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: white;
+    width: 30%;
+    display: inline-block;
+    margin-left: 2.5%;
+    margin-top: 2.5%;
+}
+
+.media-box:hover a, td a:hover {
+    text-decoration: line-through;
+    color: #b82be2;
 }
 
 .playlist-name {
     text-align: center;
-}
-
-.song-table {
-    margin: 0 auto;
-    width: 80%;   
 }
 
 .follow-item {
