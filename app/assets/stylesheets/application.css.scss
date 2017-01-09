@@ -60,6 +60,12 @@ a:hover, a.navbar-brand:hover {
     font-size: 1.25em;
 }
 
+.nav-image {
+    max-height: 100%;
+    width: auto;
+    display: block;
+}
+
 //NEW USER PAGE (sign up form)
 .login-link:hover a {
     text-decoration: line-through;
