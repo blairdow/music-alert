@@ -100,10 +100,6 @@ a:hover, a.navbar-brand:hover {
     color: #b82be2;
 }
 
-.playlist-name {
-    text-align: center;
-}
-
 .follow-item {
     margin: 5px; 
 }
@@ -112,12 +108,17 @@ a:hover, a.navbar-brand:hover {
     font-size: 1.25em;
 }
 
+.follow-item:last-child {
+    margin-bottom: 30px;
+}
+
 .pw-link {
     margin-top: 50px;
 }
 
-.follow-item:last-child {
-    margin-bottom: 30px;
+.search-result-name {
+    margin-left: 5%;
+    font-size: 1.25em;
 }
 
 .wrapper {
