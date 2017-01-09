@@ -1,18 +1,18 @@
-<div class=" col-sm-6 col-sm-offset-3">
+<div class="col-sm-6 col-sm-offset-3">
     <div class="panel panel-default">
        
         <div class="panel-heading">
             <h1 class='text-center'>Search results</h1>  
         </div>
 
-            <div class="list-group">
-                <% @users.each do |user| %>
-                    <%= link_to user_path(user), class: 'list-group-item' do %>
-                        <%= image_tag user.profile_photo.url(:thumb), class: 'img-circle' %>
-                        <span class='search-result-name'><%= user.full_name %></span>
-                    <% end %>
+        <div class="list-group">
+            <% @users.each do |user| %>
+                <%= link_to user_path(user), class: 'list-group-item' do %>
+                    <%= image_tag user.profile_photo.url(:thumb), class: 'img-circle' %>
+                    <span class='search-result-name'><%= user.full_name %></span>
                 <% end %>
-            </div>                
+            <% end %>
+        </div>                
 
     <!--NO SEARCH RESULTS MESSAGE-->
         <% if @users.blank? %>
