@@ -1,3 +1,4 @@
+<!--SEARCH RESULTS PAGE-->
 <div class="col-sm-6 col-sm-offset-3">
     <div class="panel panel-default">
        
@@ -13,10 +14,10 @@
                 <% end %>
             <% end %>
         </div>                
-
+        
     <!--NO SEARCH RESULTS MESSAGE-->
         <% if @users.blank? %>
-            <h4>Whoops! No user with the name <%= params[:search] %>.</h4>
+            <h4 class='text-center'>Whoops! No user with the name "<%= params[:search] %>".</h4>
         <% end %>
         
     </div>

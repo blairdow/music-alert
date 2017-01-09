@@ -21,13 +21,31 @@
 //SaSS vars
 $titlefont : 'Abel', sans-serif;
 $titlecolor: blueviolet;
+$navcolor: #222;
+$bgcolor: #3b3b3b;
+$bordercolor: #454545;
+$panelcolor: #2c2c2c;
+$mainfontcolor: #777;
+
 
 //General styling
 body{
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: #f7f7f7;
-    color: #5f5f5f;
+    background-color: $bgcolor;
+    color: $mainfontcolor;
     padding-top: 70px;
+}
+
+.panel {
+    background-color: $panelcolor;    
+}
+
+.panel-default > .panel-heading, th {
+    background-color: $navcolor;
+}
+
+.panel-default, .panel-default > .panel-heading, .panel > .panel-body + .table, .table > tbody > tr > td {
+    border-color: $navcolor;
 }
 
 h1, h2, h3, th, .media-box {
@@ -42,11 +60,11 @@ td, form {
     font-family: Helvetica, sans-serif;
 }
 
-a, a.navbar-brand {
+a, .navbar-inverse .navbar-brand {
     color: $titlecolor;
 }
 
-a:hover, a.navbar-brand:hover {
+a:hover, .navbar-inverse .navbar-brand:hover {
     text-decoration: line-through;
     color: #b82be2;
 }

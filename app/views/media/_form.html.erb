@@ -1,59 +1,105 @@
-<div class="wrapper">
 <% if @media_type == 'song' %>
    
-      <%= form_for [@user, @medium] do |f| %>
-       <div class="field form-group">
-            <%= f.label "Song: " %>
-            <%= f.text_field :song %>
+      <%= form_for [@user, @medium], html: { class: 'form-horizontal' } do |f| %>
+        <% @medium.errors.full_messages.each do |message| %>
+            <p class="text-danger"><strong><%= message %></strong></p>
+        <% end %>
+         
+       <div class="form-group">
+            <%= f.label "Song: ", class: 'col-sm-2 control-label', class: 'col-sm-2 control-label' %>
+            <div class="col-sm-10">
+                <%= f.text_field :song, class: 'form-control' %>
+            </div>
         </div>
-         <% @medium.errors.full_messages.each do |message| %>
-             <p class="text-danger"><strong><%= message %></strong></p>
-         <% end %>
           
-         <div class="field form-group">
-            <%= f.label "Artist: " %>
-            <%= f.text_field :artist %>   
+         <div class="form-group">
+            <%= f.label "Artist: ", class: 'col-sm-2 control-label' %>
+            <div class="col-sm-10">
+                <%= f.text_field :artist, class: 'form-control' %>       
+            </div>
          </div> 
-           <div class="field form-group">
-            <%= f.label "Album: " %>
-            <%= f.text_field :album %>
+        <div class="form-group">
+            <%= f.label "Album: ", class: 'col-sm-2 control-label' %>
+            <div class="col-sm-10">
+                <%= f.text_field :album, class: 'form-control' %>
+            </div>
         </div>
-       
-            <%= button_tag(type: 'submit', class: "btn btn-success") do %>
-              <i class="icon-ok icon-white"></i> Submit
-            <% end %>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <%= button_tag(type: 'submit', class: "btn btn-block btn-info") do %>
+                    <i class="icon-ok icon-white"></i> Submit
+                <% end %>
+            </div>
+        </div>
+        <!--LINK TO cancel-->
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type='button' class='btn btn-block btn-default btn-xs login-link'>
+                    <%= link_to 'Cancel', user_path(current_user.id) %>
+                </button>
+            </div>
+        </div>
       <% end %>
 <% end %>
 
 <% if @media_type == 'artist' %>
-    <div>
-      <%= form_for [@user, @medium] do |f| %>
-            <div class="field form-group">
-                <%= f.label "Artist: " %>
-                <%= f.text_field :artist %>
+    <%= form_for [@user, @medium], html: { class: 'form-horizontal' } do |f| %>
+        <div class="form-group">
+            <%= f.label "Artist: ", class: 'col-sm-2 control-label' %>
+            <div class="col-sm-10">
+                <%= f.text_field :artist, class: 'form-control' %>  
             </div>
-            
-             <%= button_tag(type: 'submit', class: "btn btn-success") do %>
-              <i class="icon-ok icon-white"></i> Submit
-            <% end %>
-   
-      <% end %>
-  
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <%= button_tag(type: 'submit', class: "btn btn-block btn-info") do %>
+                    <i class="icon-ok icon-white"></i> Submit
+                <% end %>
+            </div>
+        </div>
+        <!--LINK TO cancel-->
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type='button' class='btn btn-block btn-default btn-xs login-link'>
+                    <%= link_to 'Cancel', user_path(current_user.id) %>
+                </button>
+            </div>
+        </div>
+    
+    <% end %>
 <% end %>
 
 <% if @media_type == 'album' %>
-      <%= form_for [@user, @medium] do |f| %>
-            <div class="field form-group">
-                <%= f.label "Artist: " %>
-                <%= f.text_field :artist %>
+      <%= form_for [@user, @medium], html: { class: 'form-horizontal' } do |f| %>
+            <div class="form-group">
+                <%= f.label "Artist: ", class: 'col-sm-2 control-label' %>
+                <div class="col-sm-10">
+                    <%= f.text_field :artist, class: 'form-control' %>  
+                </div>
             </div>
-            <div class="field form-group">
-                <%= f.label "Album: " %>
-                <%= f.text_field :album %>
+            <div class="form-group">
+                <%= f.label "Album: ", class: 'col-sm-2 control-label' %>
+                <div class="col-sm-10">
+                    <%= f.text_field :album, class: 'form-control' %>  
+                </div>
             </div>
-            <%= button_tag(type: 'submit', class: "btn btn-success") do %>
-              <i class="icon-ok icon-white"></i> Submit
-            <% end %>
- 
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <%= button_tag(type: 'submit', class: "btn btn-block btn-info") do %>
+                        <i class="icon-ok icon-white"></i> Submit
+                    <% end %>
+                </div>
+            </div>
+            <!--LINK TO cancel-->
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type='button' class='btn btn-block btn-default btn-xs login-link'>
+                        <%= link_to 'Cancel', user_path(current_user.id) %>
+                    </button>
+                </div>
+            </div>
       <% end %>
 <% end %>
+
+
