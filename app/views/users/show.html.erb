@@ -61,23 +61,24 @@
                     <h3>Add more music...</h3>   
                 </div>
 
+                <%= link_to new_user_medium_path(current_user, :media_type => 'song'), class:'media-link' do %>
                     <div class="media-box panel panel-default">
-                        <div class='panel-body'>
-                            <%= link_to "Song", new_user_medium_path(current_user, :media_type => 'song') %>
-                        </div>
+                        <div class="panel-body"><span>Song</span></div>
                     </div>
+                <% end %>
 
-                    <div class="media-box panel panel-default">   
-                        <div class="panel-body">
-                            <%= link_to "Artist", new_user_medium_path(current_user, :media_type => 'artist') %>
-                        </div>                 
-                   </div>
+                <%= link_to new_user_medium_path(current_user, :media_type => 'artist'), class:'media-link' do %>
+                    <div class="media-box panel panel-default">
+                        <div class="panel-body"><span>Artist</span></div>
+                    </div>
+                <% end %>
 
-                   <div class="media-box panel panel-default">
-                       <div class="panel-body">
-                            <%= link_to "Album", new_user_medium_path(current_user, :media_type => 'album') %>
-                       </div>
-                   </div>  
+                <%= link_to new_user_medium_path(current_user, :media_type => 'album'), class:'media-link' do %>
+                    <div class="media-box panel panel-default">
+                        <div class="panel-body"><span>Album</span></div>
+                    </div>
+                <% end %>
+ 
             </div>
         <% end %>
 

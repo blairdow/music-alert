@@ -29,7 +29,7 @@
                   </button>
 
                 <div class='navbar-brand navbar-left'>
-                    Welcome, <%= link_to current_user.first_name, user_path(current_user.id), class: 'navbar-link' %> 
+                    <span>Welcome, </span><%= link_to current_user.first_name, user_path(current_user.id), class: 'navbar-link' %> 
                 </div>
                 <div class='navbar-brand navbar-left'>
                     <%= image_tag current_user.profile_photo.url(:thumb), :class => 'nav-image img-circle' %>
@@ -47,9 +47,9 @@
         <% if current_user %>       
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="nav navbar-nav">
-                    <%= link_to "Edit Profile", edit_user_path(current_user.id), class: 'navbar-brand' %>  
+                    <%= link_to "Edit Profile", edit_user_path(current_user.id), class: 'navbar-brand navbar-link' %>  
 
-                    <%= link_to "Log Out", session_path('dummy'), method: :delete, class: 'navbar-brand' %> 
+                    <%= link_to "Log Out", session_path('dummy'), method: :delete, class: 'navbar-brand navbar-link' %> 
                 </div>
                 
                 <!--SEARCH BAR-->

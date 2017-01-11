@@ -22,11 +22,12 @@
 $titlefont : 'Abel', sans-serif;
 $titlecolor: blueviolet;
 $navcolor: #222;
-$bgcolor: #3b3b3b;
-$bordercolor: #454545;
+
+$bgcolor: #2c2c2c;
+$bordercolor: #111;
 $panelcolor: #2c2c2c;
 $mainfontcolor: #777;
-
+$hovercolor: #b82be2;
 
 //General styling
 body{
@@ -44,8 +45,8 @@ body{
     background-color: $navcolor;
 }
 
-.panel-default, .panel-default > .panel-heading, .panel > .panel-body + .table, .table > tbody > tr > td {
-    border-color: $navcolor;
+.panel-default, .panel-default > .panel-heading, .panel > .panel-body + .table, .table > tbody > tr > td, .navbar-inverse .navbar-toggle {
+    border-color: $bordercolor;
 }
 
 h1, h2, h3, th, .media-box {
@@ -60,13 +61,13 @@ td, form {
     font-family: Helvetica, sans-serif;
 }
 
-a, .navbar-inverse .navbar-brand {
+a {
     color: $titlecolor;
 }
 
-a:hover, .navbar-inverse .navbar-brand:hover {
+a:hover {
     text-decoration: line-through;
-    color: #b82be2;
+    color: $hovercolor;
 }
 
 .edit-profile, .logout, .login, .signup  {
@@ -84,10 +85,36 @@ a:hover, .navbar-inverse .navbar-brand:hover {
     display: block;
 }
 
+.navbar-inverse .navbar-brand {
+    color: $titlecolor;
+}
+
+.navbar-inverse .navbar-brand a {
+    color: $titlecolor;
+}
+
+.navbar-inverse .navbar-brand.navbar-link:hover, .navbar-inverse .navbar-brand .navbar-link:hover {
+    text-decoration: line-through;
+    color: $hovercolor;
+}
+
+.navbar-inverse .navbar-brand span, .navbar-inverse .navbar-brand span:hover {
+    color: $mainfontcolor;
+    text-decoration: none;
+}
+
+.navbar-inverse .navbar-toggle {
+    background-color: $panelcolor;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: $mainfontcolor;
+}
+
 //NEW USER PAGE (sign up form)
 .login-link:hover a {
     text-decoration: line-through;
-    color: #b82be2;
+    color: $hovercolor;
 }
 
 .login-link {
@@ -119,9 +146,22 @@ a:hover, .navbar-inverse .navbar-brand:hover {
     margin-top: 2.5%;
 }
 
-.media-box:hover a, td a:hover {
+a.media-link {
+    text-decoration: none;
+}
+
+.media-box:hover {
+    background-color: $navcolor;    
+}
+
+.media-box:hover span {
+    color: $hovercolor;
     text-decoration: line-through;
-    color: #b82be2;
+}
+
+td a:hover {
+    text-decoration: line-through;
+    color: $hovercolor;
 }
 
 .follow-item {
