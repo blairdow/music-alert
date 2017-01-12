@@ -137,6 +137,20 @@ a:hover {
     box-shadow: inset 0 1px 1px $titlecolor, 0 0 8px $titlecolor;
 }
 
+.btn-info {
+    color: #fff;
+    background-color: #4e4e4e;
+    border-color: $bordercolor;
+}
+
+.btn-info:hover {
+    background-color: #4e4e4e;
+    border-color: $titlecolor;
+    box-shadow: inset 0 1px 1px $titlecolor, 0 0 8px $titlecolor;
+    color: $hovercolor;
+    text-decoration: line-through;
+}
+
 //NEW USER PAGE (sign up form)
 .login-link:hover a {
     text-decoration: line-through;
@@ -147,14 +161,8 @@ a:hover {
     margin-bottom: 15px;
 }
 
-
-.welcome {
-    font-size: 1.25em;
-    margin: 5px;
-}
-
-.welcome img {
-    margin: 0 10px;
+.page-header {
+    border-bottom-color: $bordercolor;
 }
 
 //USER SHOW PAGE
@@ -177,7 +185,9 @@ a.media-link {
 }
 
 .media-box:hover {
-    background-color: $navcolor;    
+    background-color: $navcolor;
+    border-color: $titlecolor;
+    box-shadow: inset 0 1px 1px $titlecolor, 0 0 8px $titlecolor;
 }
 
 .media-box:hover span {
@@ -188,6 +198,24 @@ a.media-link {
 td a:hover {
     text-decoration: line-through;
     color: $hovercolor;
+}
+
+.follow-button {
+    color: $mainfontcolor;
+    background-color: $panelcolor;
+    border-color: $titlecolor;
+}
+
+.follow-button:hover {
+    border-color: lawngreen;
+    color: lawngreen;
+    box-shadow: inset 0 1px 1px lawngreen, 0 0 8px lawngreen;
+}
+
+.unfollow:hover {
+    border-color: orangered;
+    color: orangered;
+    box-shadow: inset 0 1px 1px orangered, 0 0 8px orangered;
 }
 
 .follow-item {
@@ -221,25 +249,8 @@ a.list-group-item:hover {
     background-color: $navcolor
 }
 
-.wrapper {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-}
 
-.wrapper .actions {
-    color: $titlecolor;
-    font-family: Itim, sans-serif;
-    margin-bottom: 50px;
-}
-
-
-.blurb{
-    margin: 0 auto;
-    text-align: center;
-}
-
+//CHECK THESE VARS
 .title {
     color: $titlecolor;
     text-shadow: 1px 1px rgb(0, 216, 255);

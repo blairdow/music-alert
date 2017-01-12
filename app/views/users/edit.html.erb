@@ -65,18 +65,18 @@
                 <!--LINK TO cancel-->
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type='button' class='btn btn-block btn-default btn-xs login-link'>
-                            <%= link_to 'Cancel', user_path(current_user.id) %>
-                        </button>
+                        <%= link_to user_path(current_user.id) do %>
+                            <button type='button' class='btn btn-block btn-default btn-xs login-link'>Cancel</button>
+                        <% end %>
                     </div>
                 </div>
 
                 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type='button' class='btn btn-block btn-default login-link'>
-                            <%= link_to "Change password?", change_password_path %>
-                        </button>
+                        <%= link_to change_password_path do %>
+                            <button type='button' class='btn btn-block btn-default login-link'>Change password?</button>
+                        <% end %>
                     </div>
                 </div> 
             <% end %>

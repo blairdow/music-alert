@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-sm-12">
         <h1 class='text-center'>Log in!</h1>
-        <div class="blurb">Welcome back, friend.</div>
+        <div class="text-center">Welcome back, friend.</div>
 
         <!--FORM ERROR MESSAGES-->
         <p id="alert" class='text-danger'><%= alert %></p>
@@ -33,9 +33,9 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type='button' class='btn btn-block btn-default btn-xs login-link'>
-                        <%= link_to 'or Sign Up here', new_user_path %>
-                    </button>
+                    <%= link_to new_user_path do %>
+                        <button type='button' class='btn btn-block btn-default btn-xs login-link'>or Sign Up here</button>
+                    <% end %>
                 </div>
             </div>
         <% end %>
