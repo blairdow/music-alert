@@ -70,10 +70,6 @@ a:hover {
     color: $hovercolor;
 }
 
-.edit-profile, .logout, .login, .signup  {
-    font-size: 1.25em;
-}
-
 //navbar 
 .navbar-text {
     font-size: 1.25em;
@@ -166,8 +162,13 @@ a:hover {
 }
 
 //USER SHOW PAGE
+.title {
+    color: $titlecolor;
+    text-shadow: 1px 1px rgb(0, 216, 255);
+}
+
 .profile-img {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.31);
+    box-shadow: 2px 2px 2px $bordercolor;
     margin-top: 30px;
 }
 
@@ -200,6 +201,11 @@ td a:hover {
     color: $hovercolor;
 }
 
+th {
+    font-size: 1.25em;
+    color: $titlecolor;
+}
+
 .follow-button {
     color: $mainfontcolor;
     background-color: $panelcolor;
@@ -222,16 +228,12 @@ td a:hover {
     margin: 5px; 
 }
 
-.follow-item a, .pw-link {
+.follow-item a {
     font-size: 1.25em;
 }
 
 .follow-item:last-child {
     margin-bottom: 30px;
-}
-
-.pw-link {
-    margin-top: 50px;
 }
 
 //SEARCH RESULT PAGE
@@ -249,30 +251,6 @@ a.list-group-item:hover {
     background-color: $navcolor
 }
 
-
-//CHECK THESE VARS
-.title {
-    color: $titlecolor;
-    text-shadow: 1px 1px rgb(0, 216, 255);
-}
-
-.edit {
-    margin-bottom: 30px;
-}
-
-.save-changes-btn {
-    font-family: Itim, sans-serif;
-}
-
-th {
-    font-size: 1.25em;
-    color: $titlecolor;
-}
-
-.search-result {
-    display: inline-block;
-    margin: 5px;
-}
 
 //MEDIA QUERIES
     
