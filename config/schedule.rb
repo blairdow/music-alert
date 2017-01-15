@@ -2,22 +2,8 @@
 
 every 1.minutes do 
     rake 'send_morning_email'
+    rake 'send_evening_email'
 end
-
-#every :weekday, at: '4:55pm' do
-#    rake 'send_morning_email'
-#end
-
-#@users = User.all
-#
-#@users.each do |user|
-#    @time1 = user.morning_commute.strftime( "%H%M")
-#    @time2 = user.evening_commute.strftime( "%H%M")
-#    every :day, at: @time1 do 
-#        rake 'send_morning_email'
-#    end
-#end
-
 
 
 # Use this file to easily define all of your cron jobs.

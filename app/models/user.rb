@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
     validates :password, length: { in: 6..20 }, if: ->(obj) {obj.new_record? || !obj.password.blank? }
     
     validates :first_name,:morning_commute, :evening_commute, :email, presence: true
+    
     validates :first_name, :last_name, length: { minimum: 3 }
     
     has_secure_password
