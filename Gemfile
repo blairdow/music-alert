@@ -39,6 +39,7 @@ gem 'resque-web', require: 'resque_web'
 gem 'redis-rails', '~> 4'
 gem 'aws-sdk', '~>2.3'
 gem 'delayed_job_active_record'
+gem 'ionicons-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

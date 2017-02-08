@@ -1,0 +1,22 @@
+<div class="jumbotron jumbotron-fluid jumbotron-homepage">
+    <div class="homepage-box col-md-8 col-md-offset-2">
+        <h1 class='text-center display-3'>Welcome to Music Alert</h1>
+            <h2 class='text-center'><i class="ion-headphone"></i></h2>
+            <div class="text-center lead">The app that's like that one friend who is always asking if you've listened to that new song yet. <br>Join us and get daily email reminders to listen to songs/artists/albums on your list!</div>
+        <hr class="my-4">
+        <div class="lead">
+            <div class="col-sm-offset-3 col-sm-6">
+                <%= link_to new_user_path do %>
+                    <button type='button' class='btn btn-block btn-default btn-lg login-link'>Sign Up</button>
+                <% end %>
+            </div>
+        </div>
+        <div class="lead">
+            <div class="col-sm-offset-3 col-sm-6">
+                <%= link_to login_path do %>
+                    <button type='button' class='btn btn-block btn-default btn-lg login-link'>Log In</button>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

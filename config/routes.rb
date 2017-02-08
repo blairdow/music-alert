@@ -1,8 +1,10 @@
 require 'resque/server'
 
 Rails.application.routes.draw do
+  get 'routes/root'
+
     mount Resque::Server.new, at: '/resque'
-    root 'users#new'
+    root 'static_pages#index'
     
     resources :users do 
         member do
