@@ -239,6 +239,19 @@ th {
     border-color: $titlecolor;
 }
 
+.delete-link {
+    color: #db3b00;
+}
+
+.delete-link:hover {
+    color: orangered;
+}
+
+a.delete-link:active, a.delete-link:focus {
+    text-decoration: none;
+    color: orangered;
+}
+
 .follow-button:hover {
     border-color: lawngreen;
     color: lawngreen;

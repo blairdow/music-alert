@@ -44,9 +44,9 @@
                     <td><%= medium.artist %></td>
                     <td><%= medium.album %></td>
 
-                <!--if current user, show link to edit media-->
+                <!--if current user, show links to edit/delete media-->
                     <% if current_user && (current_user.id == @user.id) %>
-                        <td><%= link_to 'Edit', edit_user_medium_path(current_user.id, medium.id) %></td>
+                        <td><%= link_to 'Edit', edit_user_medium_path(current_user.id, medium.id) %> / <%= link_to 'Delete', user_medium_path(current_user.id, medium.id), class:'delete-link', method: :delete, data: { confirm: "Are you sure you want to delete #{medium.artist}?"} %></td>
                     <% end %>
             </tr>
                 <% end %>    

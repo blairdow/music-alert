@@ -41,7 +41,7 @@ class MediaController < ApplicationController
     def destroy
         @medium = Medium.find(params[:id])
         @medium.destroy
-        redirect_to media_path, alert: "List item removed."
+        redirect_to user_path(@medium.user_id)
     end
     
     private
