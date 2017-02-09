@@ -7,7 +7,7 @@ Well not with **Music Alert**!
 Once you sign up, you can add music (songs, artists, or albums) to your list as you go about your day. The app lets you input your commute times (morning and evening) and then it will email you a random selection from your list twice a day at your selected times! 
 
 
-### Visit the site: [Music Alert](http://ec2-54-183-65-59.us-west-1.compute.amazonaws.com:3000/)
+### Visit the site: [Music Alert](http://ec2-54-183-5-242.us-west-1.compute.amazonaws.com:3000/)
 
 ###On **Music Alert** you can:    
 
@@ -71,7 +71,7 @@ The site is deployed with Ubuntu on [Amazon Web Services EC2](https://aws.amazon
 * Include link to actual song, artist, or album on streaming service of user's choice in daily emails using streaming service APIs
 * add notification emails when profile is updated or password is changed
 
-### Link: [Music Alert](http://ec2-54-183-65-59.us-west-1.compute.amazonaws.com:3000/)
+### Link: [Music Alert](http://ec2-54-183-5-242.us-west-1.compute.amazonaws.com:3000/)
 
 
 
